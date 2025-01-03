@@ -58,10 +58,6 @@ Future<void> main() async {
 Currently supported models:
 - `typhoon-v1.5-instruct`: Latest instruction-tuned model
 
-## License
-
-[Add your license information here]
-
 ## Contributing
 
 Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) before submitting pull requests.
