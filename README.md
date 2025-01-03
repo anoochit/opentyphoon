@@ -58,13 +58,6 @@ Future<void> main() async {
 Currently supported models:
 - `typhoon-v1.5-instruct`: Latest instruction-tuned model
 
-## Error Handling
-
-The package includes proper error handling for common scenarios:
-- Invalid API key
-- Network connectivity issues
-- Model-specific errors
-
 ## License
 
 [Add your license information here]
