@@ -1,39 +1,74 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# OpenTyphoon Dart Package
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Dart package for integrating OpenTyphoon AI's large language models (LLM) into your applications.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Simple API for generating content using OpenTyphoon AI models
+- Type-safe interface for making API requests
+- Support for the latest OpenTyphoon AI models
+- Easy integration with existing Dart applications
 
-## Getting started
+## Getting Started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add `opentyphoon` to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  opentyphoon: ^1.0.0
+```
+
+Then run:
+
+```bash
+dart pub get
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+First, import the package:
 
 ```dart
-const like = 'sample';
+import 'package:opentyphoon/opentyphoon.dart';
 ```
 
-## Additional information
+Create a `GenerativeModel` instance with your API key and desired model, then use it to generate content:
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+Future<void> main() async {
+  final apiKey = 'YOUR-API-KEY';
+  final prompt = 'Burger recipe';
+
+  final model = GenerativeModel(
+    model: 'typhoon-v1.5-instruct',
+    apiKey: apiKey,
+  );
+
+  try {
+    final response = await model.generateContent([Content.text(prompt)]);
+    print(response.choices.first.message.content);
+  } catch (e) {
+    print('Error generating content: $e');
+  }
+}
+```
+
+## Available Models
+
+Currently supported models:
+- `typhoon-v1.5-instruct`: Latest instruction-tuned model
+
+## Error Handling
+
+The package includes proper error handling for common scenarios:
+- Invalid API key
+- Network connectivity issues
+- Model-specific errors
+
+## License
+
+[Add your license information here]
+
+## Contributing
+
+Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) before submitting pull requests.
