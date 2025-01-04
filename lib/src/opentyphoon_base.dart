@@ -39,6 +39,13 @@ class GenerativeModel {
   /// Parameters:
   /// - [model]: The identifier of the AI model to use.
   /// - [apiKey]: The API key for authentication.
+  ///
+  /// Models :
+  /// - typhoon-v1.5-instruct
+  /// - typhoon-v1.5-instruct-fc
+  /// - typhoon-v1.5x-70b-instruct
+  /// - typhoon-v2-8b-instruct
+  /// - typhoon-v2-70b-instruct
   GenerativeModel({
     required this.model,
     required this.apiKey,
